@@ -28,6 +28,10 @@ question_blueprint = Blueprint("question_blueprint", __name__)
 
 
 
+@question_blueprint.route('/', methods=['GET'])
+def health_check():
+    return jsonify({"message": "Hello, World!"})
+
 @question_blueprint.route('/api/v1/ask', methods=['POST'])
 def ask_question():
     """
